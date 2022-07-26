@@ -1,0 +1,15 @@
+web1 ansible_ssh_host=172.31.2.70
+db1 ansible_ssh_host=172.31.2.70
+app1 ansible_ssh_host=172.31.2.70
+
+[webserver]
+web1
+
+[appserver]
+app1
+
+[dataceter:children]
+webserver
+appserver
+
+

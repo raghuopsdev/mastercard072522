@@ -1,5 +1,5 @@
 ---
-- hosts: webservers
+- hosts: webserver
   become: yes
   tasks:
        - name: Copy the website config file
@@ -10,4 +10,4 @@
 
   handlers:
         - name: Apache Restart
-          service: name=httpd state=restart
+          service: name=httpd state=restarted

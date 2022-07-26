@@ -1,0 +1,13 @@
+---
+- hosts: webservers
+  become: yes
+  tasks:
+       - name: Copy the website config file
+         copy: src=test.conf dest=/tmp/test.conf
+
+         notify:
+           - Apache Restart
+
+  handlers:
+        - name: Apache Restart
+          service: name=httpd state=restart

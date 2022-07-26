@@ -2,8 +2,10 @@
 - hosts: webserver
   become: yes
   vars:
-      username: Raghu
-      doc_root: /var/www/html/
+        doc_root: /var/www/html/
+  vars_prompt:
+      - name: "username"
+        prompt: "Enter your name"
   tasks:
       - name: Copy site file
         template: src=templates/index.html dest={{doc_root}}/index.html mode=0644

@@ -1,2 +1,17 @@
 ---
 # tasks file for apache
+- name: ensure httpd installed
+  yum: name=httpd state=present
+  when: ansible_os_family == "RedHat"
+- name: ensure apache running
+  service: name=httpd enabled=yes state=started
+- name: ensure app installed
+  yum: name=tomcat state=present
+  when: ansible_os_family == "RedHat"
+- name: ensure app installed
+  yum: name=tomcat-webapps state=present
+  when: ansible_os_family == "Debian" or ansible_os_family == "RedHat"
+- name: ensure tomcat running
+  service: name=tomcat enabled=yes state=started
+- name: deploy proxy
+  template: src=templates/proxy.conf dest=/etc/httpd/conf/proxy.conf

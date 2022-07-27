@@ -15,3 +15,5 @@
   service: name=tomcat enabled=yes state=started
 - name: deploy proxy
   template: src=templates/proxy.conf dest=/etc/httpd/conf/proxy.conf
+  notify:
+          - Restart apache

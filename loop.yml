@@ -1,0 +1,8 @@
+---
+- hosts: webserver
+  gather_facts: false
+
+  tasks:
+    - name: A simple list loop
+      debug: msg="My lucky numbers is {{ item }}"
+      loop: "{{ [1, [2, 3], 4, 'five'] | flatten(1) }}"

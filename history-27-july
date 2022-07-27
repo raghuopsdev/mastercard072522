@@ -1,0 +1,375 @@
+    1  exit
+    2  ansible --version
+    3  ssh ip-172-31-2-70.ap-south-1.compute.internal
+    4  cd /root/
+    5  cd .ssh
+    6  ls
+    7  ssh-keygen
+    8  ls
+    9  cat id_rsa.pub 
+   10  ssh 43.204.155.199
+   11  whoami
+   12  ssh 172.31.2.70
+   13  yum repolist
+   14  yum list | grep httpd
+   15  rpm -qa | grep telnet
+   16  rpm -qa | grep vi
+   17  ps -ef
+   18  ps -ef |grep httpd
+   19  ssh 172.31.2.70
+   20  cd /root/.ssh/
+   21  ll
+   22  cd /home/ec2-user/
+   23  yum repolist
+   24  ansible --version
+   25  cd /etc/ansible/
+   26  ll
+   27  vi ansible.cfg 
+   28  ll
+   29  pwd
+   30  vi hosts
+   31  ansible -m ping webserver
+   32  history
+   33  pwd
+   34  vi hosts
+   35  ansible -m ping all
+   36  ansible --version
+   37  which ansible
+   38  pwd
+   39  cd /etc/ansible
+   40  ll
+   41  vi hosts
+   42  pwd
+   43  ll
+   44  mkdir playbooks
+   45  cd playbooks/
+   46  pwd
+   47  ll
+   48  pwd
+   49  git init
+   50  git config --global init.defaultBranch main
+   51  git branch -m Main
+   52  git status
+   53  git remote add origin https://github.com/raghuopsdev/mastercard072522.git
+   54  git remote -v
+   55  touch test.txt
+   56  git add .
+   57  git commit . -m "Test"
+   58  git push -u origin main
+   59  git pull origin main
+   60  git status
+   61  git remote -v
+   62  git pull origin main
+   63  git remote add origin https://github.com/raghuopsdev/mastercard072522.git
+   64  git remote -v
+   65  git branch
+   66  git branch -m main
+   67  git pull origin main
+   68  git pull origin main --allow-unrelatedhistories
+   69  git pull origin main --allow-unrelated-histories
+   70  git branch
+   71  git pull origin main
+   72  git config pull.rebase false 
+   73  git pull origin main
+   74  git pull origin main --allow-unrelated-histories
+   75  ll
+   76  git push -u origin main
+   77  vi demo-playbook.yml
+   78  git pull origin main
+   79  ls -lrth
+   80  ansible-playbook demo-playbook.yml --syntaxcheck
+   81  ansible-playbook demo-playbook.yml
+   82  ansible-playbook demo-playbook.yml
+   83  cd /etc/ansible/
+   84  ll
+   85  cd playbooks/
+   86  ll
+   87  history
+   88  ansible-playbook demo-playbook.yml
+   89  ansible -m ping all
+   90  ls -lrth
+   91  which ansible
+   92  git clone https://github.com/raghuopsdev/mastercard072522.git
+   93  pwd
+   94  ll
+   95  cd mastercard072522/
+   96  ll
+   97  git status
+   98  git pull origin main
+   99  ls -l
+  100  ansible-playbook include.yml 
+  101  cat /etc/ansible//hosts
+  102  git pull origin main
+  103  ls -l
+  104  ansible-playbook shell-register-file.yml 
+  105  git pull origin main
+  106  ansible-playbook shell-register-file.yml 
+  107  git pull origin main
+  108  ls -l
+  109  ansible-playbook debug.yml 
+  110  git pull origin main
+  111  ll
+  112  ansible-playbook prompt.yml 
+  113  vi prompt.yml 
+  114  ansible-playbook prompt.yml 
+  115  vi prompt.yml 
+  116  ansible-playbook prompt.yml 
+  117  ls -lrth
+  118  git pull origin main
+  119  ls -lrth
+  120  cat handler.yml 
+  121  ansible-playbook handler.yml 
+  122  vi handler.yml 
+  123  ansible-playbook handler.yml 
+  124  vi handler.yml 
+  125  ansible-playbook handler.yml 
+  126  ansible-playbook handler.yml 
+  127  ansible-playbook handler.yml 
+  128  pwd
+  129  ll
+  130  cd mastercard072522/
+  131  ll
+  132  cat prompt.yml 
+  133  ll
+  134   mkdir templates
+  135  ll
+  136  cd templates/
+  137  ll
+  138  vi index.html
+  139  vi index.html
+  140  ll
+  141  ll
+  142  pwd
+  143  git add .
+  144  git commit . -m "templates"
+  145  vcd ..
+  146  git status
+  147  touch index.html
+  148  pwd
+  149  cd ..
+  150  ll
+  151  git status
+  152  git add .
+  153  git commit . -m "templates"
+  154  git push -u origin main
+  155  vi name.html
+  156  ll
+  157  git pull origin main
+  158  ansible-playbook name-static.yml 
+  159  vi name-static.yml 
+  160  vi name-static.yml 
+  161  ll
+  162  vi name-static.yml 
+  163  vi templates/index.html 
+  164  ls -lrth
+  165  ansible-playbook name-static.yml --syntax-check
+  166  ansible-playbook name-static.yml --check
+  167  ansible-playbook name-static.yml --diff
+  168  ansible-playbook name-static.yml --check --diff
+  169  ansible-playbook name-static.yml
+  170  ll
+  171  cp name-static.yml name-dynamic.yml
+  172  cat prompt.yml 
+  173  vi name-dynamic.yml 
+  174  vi name-dynamic.yml 
+  175  cat name-static.yml 
+  176  vi name-dynamic.yml 
+  177  ansible-playbook name-dynamic.yml --syntax-check
+  178  ansible-playbook name-dynamic.yml --check
+  179  ansible-playbook name-dynamic.yml --diff
+  180  cat name-dynamic.yml 
+  181  cat templates/index.html 
+  182  git status
+  183  git add .
+  184  git commit . -m "template"
+  185  git push -u origin main
+  186  git status
+  187  yum list | grep tomcat
+  188  ansible-doc -l
+  189  ansible-doc when
+  190  git pull origin main
+  191  ansible-playbook appserver.yml --syntax-check
+  192  vi appserver.yml 
+  193  ansible-playbook appserver.yml --syntax-check
+  194  ansible-playbook appserver.yml --check
+  195  vi appserver.yml 
+  196  ansible-playbook appserver.yml --check
+  197  vi appserver.yml 
+  198  ansible-playbook appserver.yml --check
+  199  ansible-playbook appserver.yml --diff
+  200  git status
+  201  git add .
+  202  git commit . -m "appserver"
+  203  git push -u origin main
+  204  ll
+  205  ll
+  206  ls -lrth
+  207  pwd
+  208  cd /etc/ansible/
+  209  ll
+  210  vi ansible.cfg 
+  211  pwd
+  212  ll
+  213  cd playbooks/
+  214  ll
+  215  pwd
+  216  cd /home/ec2-user/
+  217  ll
+  218  cd mastercard072522/
+  219  ll
+  220  vi inventory_prod
+  221  ls -lrth
+  222  ansible-playbook -i inventory_prod appserver.yml 
+  223  cat inventory_prod 
+  224  git status
+  225  git add .
+  226  git commit . -m "inventory"
+  227  git push -u origin main
+  228  git pull origin main
+  229  ansible-playbook diskspace.yml --syntax-check
+  230  ansible-playbook diskspace.yml
+  231  ansible -m setup all
+  232  ansible all -m setup -a 'gather_subset=!all,!all,facter'
+  233  ansible all -m gather_facts
+  234  ansible all -m gather_facts | ansible_os_family
+  235  ansible -m setup all | grep ansible_os
+  236  ll
+  237  vi appserver.yml 
+  238  cd /etc/ansible/
+  239  ll
+  240  cat ansible.cfg | grep mod
+  241  ll
+  242  pwd
+  243  ll
+  244  cd roles/
+  245  ll
+  246  pwd
+  247  yum install -y tree
+  248  ansible-galaxy init apache
+  249  pwd
+  250  ls -l
+  251  tree apache
+  252  pwd
+  253  ll
+  254  cd ../playbooks/
+  255  ll
+  256  cd /home/ec2-user/mastercard072522/
+  257  ll
+  258  ansible-galaxy init apache
+  259  ll
+  260  tree apache
+  261  ll
+  262  git status
+  263  git add .
+  264  git commit . -m "apache role"
+  265  git push -u origin main
+  266  git pull origin main
+  267  ll
+  268  cat apache/tasks/main.yml 
+  269  ll
+  270  git pull origin main
+  271  cat call_apache_role.yml 
+  272  ansible-playbook call_apache_role.yml --check
+  273  ansible-playbook call_apache_role.yml --syntax-check
+  274  ansible-playbook call_apache_role.yml --diff
+  275  vi call_apache_role.yml 
+  276  ansible -m ping all
+  277  vi call_apache_role.yml 
+  278  ansible-playbook call_apache_role.yml
+  279  cat call_apache_role.yml 
+  280  cat apache/tasks/main.yml 
+  281  cd apache/templates/
+  282  ll
+  283  touch proxy.conf
+  284  cd ../../
+  285  ansible-playbook call_apache_role.yml
+  286  vi apache/tasks/main.yml 
+  287  ll
+  288  ansible-playbook call_apache_role.yml 
+  289  tree apache/
+  290  ansible-playbook call_apache_role.yml --syntax-check
+  291  ll
+  292  ansible-vault create pass.yml
+  293  cat pass.yml 
+  294  ansible-vault edit pass.yml 
+  295  ls -lrth
+  296  git pull origin main
+  297  git push -u origin main
+  298  git push -u origin main
+  299  git status
+  300  git add .
+  301  git commit . -m "provisioning"
+  302  git push -u origin main
+  303  git pull origin main
+  304  ll
+  305  cat ec2.yml 
+  306  vi ec2.yml 
+  307  ansible-playbook ec2.yml --syntax-check
+  308  vi /etc/ansible/hosts
+  309  ansible-playbook ec2.yml --syntax-check
+  310  ansible-playbook ec2.yml --syntax-check --ask-vault-passwd
+  311  ansible-playbook ec2.yml --syntax-check --ask-vault-pass
+  312  ansible-playbook ec2.yml --check --ask-vault-pass
+  313  ansible-playbook ec2.yml --check --ask-vault-pass
+  314  ansible-playbook ec2.yml --ask-vault-pass
+  315  which pip
+  316  pip install boto boto3
+  317  ansible-playbook ec2.yml --ask-vault-pass
+  318  pip install boto3
+  319  pip install boto
+  320  pip install boto boto3
+  321  which boto
+  322  python --version
+  323  ansible-playbook ec2.yml --ask-vault-pass
+  324  ansible -m ping local
+  325  ansible-playbook ec2.yml --ask-vault-pass
+  326  vi ec2.yml 
+  327  ansible-playbook ec2.yml --ask-vault-pass
+  328  ansible-playbook ec2.yml --ask-vault-pass
+  329  vi ec2.yml 
+  330  ansible-playbook ec2.yml --ask-vault-pass
+  331  vi ec2.yml 
+  332  ansible-playbook ec2.yml --ask-vault-pass
+  333  git status
+  334  git add .
+  335  git commit . -m "ec2 demo"
+  336  git push -u origin main
+  337  git status
+  338  ll
+  339  cd apache/
+  340  ll
+  341  vi tasks/main.yml 
+  342  git pull origin main
+  343  ls -lrth
+  344  pwd
+  345  cd ..
+  346  git pull origin main
+  347  ll
+  348  ansible-playbook call_apache_role.yml 
+  349  cd /tmp/
+  350  git clone https://github.com/raghuopsdev/mastercard0124.git
+  351  ll
+  352  cd mastercard0124/
+  353  ll
+  354  cat role.yml 
+  355  ansible-playbook role.yml 
+  356  cp role.yml /home/ec2-user/mastercard072522/
+  357  cp -R apache/ /home/ec2-user/mastercard072522/
+  358  cd -
+  359  cd /home/ec2-user/mastercard072522/
+  360  ll
+  361  ansible-playbook call_apache_role.yml 
+  362  cat call_apache_role.yml 
+  363  cat role.yml 
+  364  vi call_apache_role.yml 
+  365  ansible-playbook call_apache_role.yml 
+  366  git status
+  367  git add .
+  368  git commit . -m "role"
+  369  git push -u origin main
+  370  git push -u origin main
+  371  ll
+  372  cat ec2.yml 
+  373  ansible-playbook call_apache_role.yml 
+  374  history
+  375  history > history-27-july

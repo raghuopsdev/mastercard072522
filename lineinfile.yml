@@ -5,7 +5,7 @@
     fn: line1
   tasks:
     - name: create file
-      file: path=/tmp/{{ fn }} state=present
+      file: path=/tmp/{{ fn }} state=touch
     - name: Add lines
       lineinfile: dest=/tmp/{{ fn }} line={{ item }} state=present
       with_items:

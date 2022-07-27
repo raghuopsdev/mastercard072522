@@ -1,4 +1,4 @@
 ---
 - hosts: webserver
   roles:
-   - apache
+    - apache

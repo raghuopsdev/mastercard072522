@@ -1,0 +1,37 @@
+Repo used : https://github.com/raghuopsdev/hello-world-1.git
+
+JENKINS INSTALLATION :
+
+https://www.jenkins.io/doc/book/installing/linux/#red-hat-centos
+
+
+SETTINGS :
+
+Install JDK & MAVEN
+
+yum install java-1.8.0-openjdk-devel.x86_64
+
+PATH - In Jenkins - JDK
+
+/usr/lib/jvm/java-1.8.0-openjdk
+
+vi /etc/passwd
+
+jenkins users please login shell - /bin/false - > change it to - > /bin/sh
+
+vi /etc/sudoers
+
+jenkins ALL=(ALL) NOPASSWD: ALL
+%wheel  ALL=(ALL)       NOPASSWD: ALL
+
+# usermod -aG wheel jenkins
+
+Jenkins - > Helloworld Job - > Add build step - > Execute Shell
+
+sudo ansible-playbook copy.yml
+
+APP SERVER
+==========
+
+# yum install tomcat tomcat-webapps -y
+# service tomcat start

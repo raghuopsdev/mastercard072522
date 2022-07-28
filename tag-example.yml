@@ -1,0 +1,31 @@
+---
+- hosts: webserver
+  gather_facts: yes
+  become_user: root
+ 
+  tasks:
+  - name: Check if Apache is already installed
+    shell: dpkg -s apache2 | grep Status
+    register: apache2_is_installed  
+    failed_when: no
+  - name: Install "{{ pkgname }}"
+    apt: pkg="{{ pkgname }}" state=present
+    when: apache2_is_installed.rc == 1
+    notify:
+    - restart nginx
+  - name: ensure nginx is running and enable it at boot
+    service: name=nginx state=started enabled=yes
+    tags:
+    - mytag1
+
+  handlers:
+    - name: restart nginx
+      service: name=nginx state=restarted
+    
+- hosts: dbservers
+  become_user: root
+  tasks:
+  - name: Install mysql
+    apt: pkg="{{ pkgname }}" state=present
+    tags:
+    - mytag2

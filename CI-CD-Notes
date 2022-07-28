@@ -1,0 +1,17 @@
+Jenkins
+Installation
+    - > https://www.jenkins.io/doc/book/installing/linux/#red-hat-centos
+JDK 
+    - > yum install java-1.8.0-openjdk-devel.x86_64
+service start jenkins
+http://<public-ip>:8080/
+    - > cat /var/lib/jenkins/secrets/initialAdminPassword
+Jenkins - > manage jenkins - > Global Tool Configuration - > JDK (/usr/lib/jvm/java-1.8.0-openjdk)
+I have setup the Maven
+Setup a Sample Hello-Job
+Build An App Server (Manual) 
+Artifacts - > Playbook - > App Server
+   - Cluster Deployments
+   - Pre & Post Deployment activities.
+   - Backup
+   - Deployment

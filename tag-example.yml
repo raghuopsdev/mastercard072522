@@ -22,7 +22,7 @@
     - name: restart nginx
       service: name=nginx state=restarted
     
-- hosts: dbservers
+- hosts: webserver
   become_user: root
   tasks:
   - name: Install mysql

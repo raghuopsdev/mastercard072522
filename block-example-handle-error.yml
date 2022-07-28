@@ -4,16 +4,16 @@
   become: true
   become_user: root
 
-tasks:  
+  tasks:  
   - block:  
 
-  - name: Enable Nginx during boot
-    service: name=nginx state=started enabled=yes
+    - name: Enable Nginx during boot
+      service: name=nginx state=started enabled=yes
  
-    rescue:  
+      rescue:  
       - name: This section runs only when there is an error in the block.  
         debug: msg="There was an error in starting/enabling nginx."  
-    always:  
+      always:  
       - name: This section will run always.  
         debug: msg="This always executes."`
         

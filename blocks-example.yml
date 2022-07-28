@@ -1,0 +1,13 @@
+---
+- hosts: webserver
+
+  tasks:
+  - name: Install Nginx
+    
+    block:
+    - apt: pkg=nginx state=present
+    - service: name=nginx state=started enabled=yes
+    when: ansible_distribution == 'Ubuntu'
+    
+    become: true
+    become_user: root

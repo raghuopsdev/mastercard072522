@@ -25,7 +25,7 @@
 - hosts: webserver
   become_user: root
   tasks:
-  - name: Install mysql
-    apt: pkg="{{ pkgname }}" state=present
+  - name: Install httpd
+    yum: name=httpd state=present
     tags:
     - mytag2

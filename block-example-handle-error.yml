@@ -1,0 +1,20 @@
+
+---
+- hosts: webserver
+  become: true
+  become_user: root
+
+  tasks:  
+  - block:  
+
+    - name: Enable Nginx during boot
+      service: name=nginx state=started enabled=yes
+ 
+      rescue:  
+      - name: This section runs only when there is an error in the block.  
+        debug: msg="There was an error in starting/enabling nginx."  
+      always:  
+      - name: This section will run always.  
+        debug: msg="This always executes."`
+        
+        

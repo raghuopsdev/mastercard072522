@@ -1,0 +1,13 @@
+---
+- hosts: webserver
+  gather_facts: yes
+  become_user: root
+    
+  tasks:
+ 
+  - name: Installing packages using loops
+    yum: name={{ item }} state=present update_cache=yes
+    with_items:
+      - sysstat
+      - htop
+      - git    

@@ -1,0 +1,61 @@
+Step 1 (Preparing Windows - WinRM Service along with Port Listening)
+====================================================================
+
+Go to - > PowerShell
+C:\> netsh advfirewall firewall add rule name="WinRM 5985" protocol=TCP dir=in localport=5985 action=allow
+
+AND
+
+Powershell command
+=================
+c:\> Enable-PSRemoting
+
+i) The WinRM service is started and set to automatic startup.
+ii) Creates a listener on the default WinRM ports 5985 for HTTP traffic.
+iii) Enables the firewall exceptions for WS-Management.
+iv) Registers the PowerShell session configurations with WS-Management.
+v) Enables the PowerShell session configurations.
+vi) Sets the PowerShell remote sessions to allow remote access.
+vii) Restarts the WinRM server to apply all of the changes.
+
+
+Step 2
+=================================================
+https://github.com/ansible/ansible/blob/devel/examples/scripts/ConfigureRemotingForAnsible.ps1
+
+  1) (Get-Host).Version
+  2) $url = "https://raw.githubusercontent.com/ansible/ansible/devel/examples/scripts/ConfigureRemotingForAnsible.ps1"
+  3) $file = "$env:temp\ConfigureRemotingForAnsible.ps1"
+  4) (New-Object -TypeName System.Net.WebClient).DownloadFile($url, $file)
+  5) powershell.exe -ExecutionPolicy ByPass -File $file
+
+Optional -----
+[Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor [Net.SecurityProtocolType]::Tls12
+
+
+------------
+
+On Ansible
+
+# yum install python2-winrm / (# pip install pywinrm)
+
+# vi /etc/ansible/hosts
+
+[windows]
+vmwin ansible_host=172.31.2.232
+
+[windows:vars]
+
+ansible_user=ansible
+ansible_password=<password>
+ansible_port=5986
+ansible_connection=winrm
+ansible_winrm_transport=basic
+ansible_winrm_server_cert_validation=ignore
+
+
+====================
+
+To check the connectivity from Controller
+
+# ansible vmwin -m win_ping

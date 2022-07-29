@@ -1,0 +1,11 @@
+---
+
+- hosts: vmwin
+
+  tasks:
+
+  - name: Copy File
+
+    ansible.windows.win_copy:
+      src: /tmp/output.txt
+      dest: C:\output.txt

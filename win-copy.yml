@@ -6,7 +6,6 @@
 
   - name: Copy File
 
-    win_copy:
+    ansible.windows.win_copy:
       src: /tmp/output.txt
-      dest: C:\
-      remote_src: yes
+      dest: C:\output.txt

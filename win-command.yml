@@ -11,4 +11,5 @@
 
    - name: run a cmd command
 
-     win_command: cmd.exe /c mkdir C:\test; copy con efg.txt
+     win_command: cmd.exe /c mkdir C:\test
+     win_command: cmd.exe /c copy con efg.txt

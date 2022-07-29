@@ -12,7 +12,7 @@
     - name: Create a new User 
       win_user:
 
-        name: john
+        name: michael
         password: MyP4ssw0rd
         state: present
         groups:

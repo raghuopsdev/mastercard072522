@@ -1,0 +1,22 @@
+# Refer the EC2.yml for Variables
+........... 
+..........
+tasks:
+
+- name: create elb
+elb_classic_lb:
+aws_access_key: "{{ aws_access_key }}"
+aws_secret_key: "{{ aws_secret_key }}"
+name: "Raghu-elb"
+scheme: internal
+state: present
+region: "{{ region }}"
+        instance_ids:
+          - i-0e1a900100af9239f
+        purge_instance_ids: true
+        subnets:
+          - subnet-037e3db5f092dd8b1
+        listeners:
+          - protocol: http # options are http, https, ssl, tcp
+            load_balancer_port: 80
+            instance_port: 80

@@ -1,0 +1,12 @@
+---
+- hosts: vmwin 
+
+  tasks: 
+
+   - name: Stop service Audio
+
+     win_service:
+
+       name: Audiosrv
+
+       state: stopped
